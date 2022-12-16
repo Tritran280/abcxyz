@@ -1,3 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@1&display=swap');
+
+#none {
+	margin-top: 40px;
+}
 body{
 	background-image: url('https://tritran280.github.io/abcxyz/Img/backgr.jpg');
 	background-size: auto;
@@ -12,108 +18,72 @@ header {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	padding: 20px;
+	height: 50px;
+	padding: 10px;
 	box-sizing: border-box;
-	background: #DD3543;
+	background: #1a7bd5;
   }
-#header{
-	background-color: rgb(21, 29, 29, 0.95);
-	position: fixed;
 
+.cls-hearder {
+	margin: 0;
+	padding: 0;
 }
+
 nav{
 	display: flex;
 	justify-content: space-between;
-	justify-items: center;	
+	justify-items: center;
 }
-#id-logo img{
-	max-width: 40px;
-	max-height: 40px;
+.logo {
+	flex-basis: 10%;
 }
-
-#main-menu{
-	display: flex;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	font-size: 14px;
-}
-#main-menu li{
-	position: relative;
-}
-#main-menu li a{
-	color: aliceblue;
-	display: block;
-	padding: 18px 20px;
+.logo a {
+	color: antiquewhite;
 	text-decoration: none;
+	font-size: 20px;
 }
-#main-menu li a:hover{
-	color: rgb(121, 52, 231);
-}
-
-
-#main-menu li.sub-menu ul {
-	position: absolute;
-	background-color: rgba(21, 29, 29, 0.850);
-	padding: 5px 0px;
-	list-style: none;
-	width: 90px;
-	display: none;
-}
-#main-menu .sub-menu:hover ul{
-	display: block;
-}
-#main-menu .sub-menu .lis-option a{
-	padding: 7px 20px;
-	border-bottom: 1px solid rgb(87, 88, 90);
-}
-#main-menu .sub-menu li:hover a{
-	border-bottom: 1px solid rgb(255, 255, 255);
-	color: blueviolet;
-}
-#main-menu .sub-menu .lis-option li:last-child a{
-	border: none;
-}
-#main-menu li.has-child::after{
-	font-family: "Font Awesome 5 Free";
-	font-weight: 600;
-	content: "\f106";
-	color: rgb(130, 131, 131);
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	padding: 20px 0px;
-}
-#main-menu li.has-child:hover::after{
-	content: "\f107";
-}
-
-
-
 .search-box {
+	flex-basis: 45%;
 	position: relative;
-	padding: 13px;
-	width: 40%;
 }
 .search-box #search-text {
 	position: absolute;
-	border: 2px solid rgb(218, 221, 56);
-	background-color: rgba(246, 247, 242, 0.835);
-	height: 22px;
-	width: 230px;
-	right: 38px;
-	border-radius: 9px;
-	padding: 0px 10px;
-
+	right: 30px;
+	left: 10px;
+	border: 2px solid #273c75;
+	padding: 5px 15px;
+	margin-bottom: 10px;
+	border-radius: 15px;
 }
 .search-box #search-btn {
 	position: absolute;
-	right: 10px;
-	padding: 6px;
+	right: 0px;
+	margin-top: 8px;
 	border: none;
-	color: rgb(169, 177, 184);
-	background-color: rgba(246, 246, 246, 0);
-	cursor: pointer;
-	height: 28px;
-	width: 28px;
+	background-color: rgba(255, 255, 0, 0);
 }
+.main-menu {
+	flex-basis: 35%;
+}
+.main-menu #menu {
+	display: flex;
+	list-style: none;
+	margin: 8px -50px;
+}
+.main-menu #menu #tk {
+	margin-right: 60px;
+}
+.main-menu #menu #gh {
+	margin-right: 60px;
+}
+
+.main-menu #menu li a{
+	text-decoration: none;
+	color: #c4f0f1;
+	font-weight: bold;
+}
+
+
+
+
+
