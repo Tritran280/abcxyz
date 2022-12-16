@@ -7,35 +7,98 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 	<link rel="stylesheet" href="https://tritran280.github.io/abcxyz/CSS/display.css">
 	<script src="https://tritran280.github.io/abcxyz/abs.js"></script>
+	<script src="https://tritran280.github.io/abcxyz/showproducts.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+	<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+	<link rel="stylesheet" href="https://tritran280.github.io/abcxyz/CSS/displaymp.css">
+	<link rel="stylesheet" href="https://tritran280.github.io/abcxyz/CSS/content.css">
 	<title>Y</title>
 </head>
 <body>
 	<div id="wr-p">
-		<div id="header">
-			<nav class="container">
-				<a href="" id="id-logo"><!-- <img src="avata.png" alt="" /> --></a>
-				<form action="" class="search-box">
-					<input type="text" id="search-text" placeholder="Sản phẩm">
-					<button id="search-btn">
-						<i href="" class="fa fa-search"></i>
-					</button>
-				</form>
-				<ul id="main-menu">
-					<li><a href="">Tài khoản</a></li>
-					<li><a href="">Giỏ hàng</a></li>
-					<li class="sub-menu">
-						<a href="">Điện thoại</a>
-						<ul class="lis-option">
-							<li><a href="">Samsung</a></li>
-							<li><a href="">Iphone</a></li>
-							<li><a href="">Realme</a></li>
-						</ul>
-					</li>	
-					<li><a href="">Hỏi đáp</a></li>
+		<header>
+			<div id="header">
+				<nav class="container">
+					<a href="" id="id-logo"><!-- <img src="avata.png" alt="" /> --></a>
+					<form action="" class="search-box">
+						<input type="text" id="search-text" placeholder="Sản phẩm">
+						<button id="search-btn">
+							<i href="" class="fa fa-search"></i>
+						</button>
+					</form>
+					<ul id="main-menu">
+						<li><a href="">Tài khoản</a></li>
+						<li><a href="">Giỏ hàng</a></li>
+						<li class="sub-menu">
+							<a href="">Điện thoại</a>
+							<ul class="lis-option">
+								<li><a href="">Samsung</a></li>
+								<li><a href="">Iphone</a></li>
+								<li><a href="">Realme</a></li>
+							</ul>
+						</li>	
+						<li><a href="">Hỏi đáp</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div id="content">
+			<div class="lis-products">
+				<ul id="list-pd">
+					<li id="name-products"><a href="">iPhone</a></li>
+					<li id="name-products"><a href="">Samsung</a></li>
+					<li id="name-products"><a href="">Oppo</a></li>
+					<li id="name-products"><a href="">Vivo</a></li>
+					<li id="name-products"><a href="">Xiaomi</a></li>
+					<li id="name-products"><a href="">Realme</a></li>
+					<li id="name-products"><a href="">Nokia</a></li>
+					<li id="name-products"><a href="">Ipad</a></li>
 				</ul>
-			</nav>
+			</div>
+			<div class="products-hot">
+				
+			</div>
+			<div class="products">
+
+			</div>
+
 		</div>
+
 	</div>
 	
 </body>
+<script>
+	function load() {
+	$.ajax({
+		type: "GET",
+		url: "products.json",
+		dataType: "json",
+		success: function (response) {
+			var products = response[0]
+			for (var k in products['products']) {
+				id = products['products'][k].id
+				n = products['products'][k].name
+				img = products['products'][k].img
+				price = products['products'][k].price
+				info = products['products'][k].info
+				$(".products").append('<div class="product'+id+'"></div>')
+				$(".product"+id).append('<ul id="img'+id+'"></ul>')
+				$(".product"+id).append('<ul id="ct'+id+'"></ul>')
+				$("#img"+id).append('<img src="'+img+'"></img>')
+				// name
+				$("#ct"+id).append('<li><a href="">'+n+'</a></li>')
+				$('#ct'+id+'>li>a').css({"color":'black', 'font-weight':'bold'})
+				// price
+				$("#ct"+id).append('<li><a href="">'+price+'</a></li>')
+				// product information
+				$("#ct"+id).append('<li><a href="">'+info+'</a></li>')
+				$(".product"+id).append('<ul class="buy"><button id="buy'+id+'" onclick="shows('+id+')">Mua Ngay</button><i class="fa fa-cart-shopping"></i></ul>')
+				
+			}
+			
+		}
+	});
+}
+load();
+</script>
 </html>

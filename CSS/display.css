@@ -1,6 +1,6 @@
 body{
 	background-image: url('https://tritran280.github.io/abcxyz/Img/backgr.jpg');
-	background-size: cover;
+	background-size: auto;
 	background-position-y: -50px;
 	margin: 0;
 }
@@ -8,10 +8,18 @@ body{
 	max-width: 960px;
 	margin: 0px auto;
 }
-
-
+header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+	background: #DD3543;
+  }
 #header{
 	background-color: rgb(21, 29, 29, 0.95);
+	position: fixed;
+
 }
 nav{
 	display: flex;

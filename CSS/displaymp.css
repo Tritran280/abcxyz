@@ -1,0 +1,29 @@
+@media screen and (max-width: 768px) {
+	body {
+		background-size: auto;
+	}
+	#id-logo {
+		display: none;
+	}
+	#header {
+		position: relative;
+	}
+	#main-menu {
+		display: none;
+	}
+	.container {
+		height: 50px;
+	}
+	.search-box #search-text {
+		position: relative;
+		width: 140px;
+		right: 6px;
+	}
+	.search-box {
+		width: 60%;
+	}
+	.search-box #search-btn {
+		height: 27px;
+    	width: 96px;
+	}
+}
